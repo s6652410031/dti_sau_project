@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/login_ui.dart';
+import 'package:flutter_application_1/views/signup_ui.dart';
 
 class WelcomeUI extends StatefulWidget {
   const WelcomeUI({super.key});
@@ -50,7 +52,13 @@ class _WelcomeUIState extends State<WelcomeUI> {
               children: [
                 OutlinedButton(
                   onPressed: () {
-                    // Add your login logic here
+                    // Navigate to LoginUI
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginUI(),
+                      ),
+                    );
                   },
                   child: Text(
                     'LOGIN',
@@ -67,7 +75,13 @@ class _WelcomeUIState extends State<WelcomeUI> {
                 SizedBox(width: 20), // Add some space between buttons
                 ElevatedButton(
                   onPressed: () {
-                    // Add your sign-up logic here
+                    // Navigate to SignupUI
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignupUI(),
+                      ),
+                    );
                   },
                   child: Text(
                     'SIGN UP',
@@ -79,7 +93,8 @@ class _WelcomeUIState extends State<WelcomeUI> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
-                    backgroundColor: Colors.black, // Set background color for ElevatedButton
+                    backgroundColor:
+                        Colors.black, // Set background color for ElevatedButton
                   ),
                 ),
               ],
